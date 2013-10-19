@@ -4,12 +4,13 @@
 	<meta charset="utf-8">
 	<title>getLES.tk</title>
 	<link rel="stylesheet" href="css/style.css">
+<link href='http://fonts.googleapis.com/css?family=Iceberg' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<header>
-		<h1>getLES<span>.tk<span></h1>
-		<p>get your cheap VPS up and running in a day (or two)!</p> 
+		
 		<nav>
+			<h1>getLES<span>.tk<span></h1>
 			<ul>
 				<li><a href="#intro">Intro</a></li>
 				<li><a href="#sign">Sign up</a></li>
@@ -22,16 +23,32 @@
 	<section>
 		<article id="intro">
 			<h1>Intro</h1>
-			<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consectetur lectus id orci hendrerit tincidunt. Nunc et libero elementum sem sagittis posuere. Ut non faucibus lacus. Etiam porttitor gravida interdum. Proin vel ipsum id leo porttitor molestie ultricies vel diam. Integer in arcu id dolor sollicitudin fringilla et vel risus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed lacus est, tristique a nunc a, egestas tempor sapien. In facilisis mi convallis, volutpat tortor vitae, bibendum augue. Nunc et interdum nisi. Nam dictum, risus commodo pulvinar porta, lectus purus facilisis nulla, fermentum posuere turpis arcu nec felis. Cras sed velit rhoncus sapien ullamcorper porta vel sed enim. Nunc egestas ac felis eu convallis. Aliquam a volutpat libero.
-
-Ut viverra, velit eu egestas viverra, tellus sem ornare erat, at aliquam nisl odio a neque. In id nulla quis tortor ullamcorper iaculis ac non turpis. Aenean placerat venenatis faucibus. Ut dapibus hendrerit pretium. Ut commodo elementum ipsum at semper. Duis id lacus odio. In dapibus nulla et lacus eleifend malesuada. In adipiscing auctor ipsum sit amet mattis. In lobortis felis ut cursus aliquam. In ac blandit nulla. Etiam tempor, lorem a tempor tempus, augue velit molestie nunc, id dictum metus nunc at purus. Phasellus scelerisque in dui viverra ornare. Curabitur vel sapien vestibulum, posuere nibh vitae, pharetra nisl. Curabitur ultrices, eros et tristique blandit, tortor erat scelerisque nisl, ullamcorper pellentesque metus nisi a felis. </p> 
+			<h2> Welcome to getLES.tk!</h2>
+			<p> This page is meant to be easy guide for begginers to get their LES unmanaged VPS up and running in the  shortest time and with as little troubles as possible.  
+			<h2>What's VPS, LES, etc? And how can I use it?</h2>
+			<p>VPS stands for Virtual Private Server. Simply put, we have more (virtual) servers running on one physical server. Each VPS has its own portion of resources, which are usually guaranteed, so that different VPS are independent of each other. They have own filesystem, users, you can reboot them individually, etc. As there are many virtualization technologies, details can be different. <a href="https://duckduckgo.com/Virtual_private_server" target="_blank">Internet</a> is your friend if you want to learn more about this topic.  </p>
+			<img src="img/vps.png" alt="VPS Image">
+			<p>VPS has wide range of usage - one can use it as private VPN, to host websites, as a game server, etc, etc... Here we will cover how to get LES VPS, first steps, basic security tips and how to host simple static webpage like the one you are reading now.  
+			<p>LES stands for <a href="http://lowendspirit.com" target=”_blank” >LowEndSpirit</a>. As its website states, "The goal of lowendspirit.com is to provide the user (You) with inexpensive resources on a virtual platform.". With LES you can get your own VPS for as cheap as 3 euro a year. And LES is what's this guide about. If you keep up, you can have your LES VPS running in less than few days! </p>   
+			<p class="warning"> This website is in no way associated with LowEndSpirit! I personally used everything mentioned in this guide (getLES.tk is hosted on LES), but there is no way to be sure that repeating anything from this guide could result in your ban from LES or breaking your VPS.</p>  
+			<p>"The services offered on lowendspirit are unmanaged i.e. self managed (By You) this allows the low price to remain low." This means that if you are not willing to learn new stuff, the service is not for you.</p>  
 		</article>
 		<article id="sign">
 			<h1>Sign up</h1>
-			<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consectetur lectus id orci hendrerit tincidunt. Nunc et libero elementum sem sagittis posuere. Ut non faucibus lacus. Etiam porttitor gravida interdum. Proin vel ipsum id leo porttitor molestie ultricies vel diam. Integer in arcu id dolor sollicitudin fringilla et vel risus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed lacus est, tristique a nunc a, egestas tempor sapien. In facilisis mi convallis, volutpat tortor vitae, bibendum augue. Nunc et interdum nisi. Nam dictum, risus commodo pulvinar porta, lectus purus facilisis nulla, fermentum posuere turpis arcu nec felis. Cras sed velit rhoncus sapien ullamcorper porta vel sed enim. Nunc egestas ac felis eu convallis. Aliquam a volutpat libero.
-
-Ut viverra, velit eu egestas viverra, tellus sem ornare erat, at aliquam nisl odio a neque. In id nulla quis tortor ullamcorper iaculis ac non turpis. Aenean placerat venenatis faucibus. Ut dapibus hendrerit pretium. Ut commodo elementum ipsum at semper. Duis id lacus odio. In dapibus nulla et lacus eleifend malesuada. In adipiscing auctor ipsum sit amet mattis. In lobortis felis ut cursus aliquam. In ac blandit nulla. Etiam tempor, lorem a tempor tempus, augue velit molestie nunc, id dictum metus nunc at purus. Phasellus scelerisque in dui viverra ornare. Curabitur vel sapien vestibulum, posuere nibh vitae, pharetra nisl. Curabitur ultrices, eros et tristique blandit, tortor erat scelerisque nisl, ullamcorper pellentesque metus nisi a felis. </p> 
+			<h2> Ready?</h2>
+			<p> Let's make few things clear: as I mentioned before, you need to be ready to learn new stuff. But this does not mean that you should be afraid. I had no experience with VPS before, but with help of internet and its good people I had my LES machine running the way I wanted in short time. The best part was the amount of info I learnt in process.   
+			<p>Your first task is to go for <a href="http://lowendspirit.com" target="_blank">LES website</a>. For your own good, read it from beggining to end. If there is stuff that you do not understand, research it. There will probably be a lot of new stuff, but do not worry, (when writing this) I am running my VPS for less than a week and there is still stuff that I am not familiar with. This guide will cover all basic understanding you need to begin with.   
+			<h2>LowEndSpirit</h2>
+			<p> So you studied LES website, right? Then let's talk about few things I think you need to consider at this stage.</p>
+			<p> LES VPS is unmanaged- based on OpenVZ and SolusVM. OpenVZ is virtualization technique, SolusVM is VPS management system "which allows you to seamlessly reinstall, reboot, shutdown, boot, change your hostname, get network information, get statistics regarding your server and much more". Imagine that VPS is your computer- unmanaged now means that you need to take care of everything: software install, update, user management, security, backup...
+			
+			<a href="http://solusvm.com" target="_blank"><img src="img/solusvm_logo.png" alt="SolusVM logo"></a>
+			<a href="http://openvz.org" target="_blank"><img src="img/openvz_logo.jpg" alt="openVZ logo"></a>
+			<p>Let's check what we can get <a href="http://lowendspirit.com/locations.html" target="_blank">here</a>. That's not so important for you, so go ahead and click on ORDER NOW. We are decided to get one, right?</p>
+			<p>Now you see specs of VPS. What you do is research what those parameters mean (RAM, HDD vs SSD, amount of transfer, location). And choose one. How? Well, after you research those values, you should be able to make a decision, depending on what you want to do with your VPS.   
+			<p> In case you're wondering what you could do with 128MB, there is a nice post on <a href="http://www.reddit.com/r/webhosting/comments/1o9719/whats_possible_with_a_128mb_server/" target="_blank">reddit</a>.
 		</article>
+
 		<article id="first">
 			<h1>Fisrt steps</h1>
 			<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consectetur lectus id orci hendrerit tincidunt. Nunc et libero elementum sem sagittis posuere. Ut non faucibus lacus. Etiam porttitor gravida interdum. Proin vel ipsum id leo porttitor molestie ultricies vel diam. Integer in arcu id dolor sollicitudin fringilla et vel risus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed lacus est, tristique a nunc a, egestas tempor sapien. In facilisis mi convallis, volutpat tortor vitae, bibendum augue. Nunc et interdum nisi. Nam dictum, risus commodo pulvinar porta, lectus purus facilisis nulla, fermentum posuere turpis arcu nec felis. Cras sed velit rhoncus sapien ullamcorper porta vel sed enim. Nunc egestas ac felis eu convallis. Aliquam a volutpat libero.
