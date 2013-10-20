@@ -12,7 +12,6 @@ header {
 	left: 0;
 	right: 0;
 	background-color:#222222;
-	max-height:100px;
 }
 header h1 {
 	display: inline;
