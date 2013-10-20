@@ -21,6 +21,9 @@ header h1 {
 	color: #CCCC99;
 	
 }
+header h1:hover {
+	text-shadow: .1px .1px .1px #AAAAAA;
+}
 header span {
 	font-size:12px;
 }
@@ -52,14 +55,16 @@ header a:hover {
 }
 article {
 	max-width:800px;
-	margin: 0 auto;
+	margin: 45px auto;
+	padding: 1px 10px;
+	font-family: 'Roboto Slab', serif;
+	-moz-box-shadow: 1px 1px 3px 2px #aaaaaa;
+  	-webkit-box-shadow: 1px 1px 3px 2px #aaaaaa;
+  	box-shadow:         1px 1px 3px 2px #aaaaaa;
 }
 article h1 {
-	padding: 100px 0 0 0; 
 	font-style: italic;
         font-size: 20px;
-        font-family: Lucida Grande;
-        color: #CCCC99;
 }
 article h2 {
 	font-style: italic;
@@ -67,7 +72,7 @@ article h2 {
 	
 }
 article p {
-	color: rgb(7, 54, 66);
+	color: #333333;
 	font-size: 12px;
 }
 article img {
