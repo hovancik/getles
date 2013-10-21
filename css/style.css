@@ -88,3 +88,22 @@ article img {
 	height: auto;
 	display: block;
 }
+footer {
+	text-align: center;
+	color: #686868;
+	font-size: 11px;
+	font-family: 'Roboto Slab', serif;
+}
+footer a {
+	text-decoration:none;
+	color: #686868;
+	font-weight: bold;
+	-webkit-transition:color .3s ease-in;  
+  	-moz-transition:color .3s ease-in;  
+   	-o-transition:color .3s ease-in;  
+   	transition:color .3s ease-in; 
+}
+
+footer a:hover {
+	color:#383838;
+}
