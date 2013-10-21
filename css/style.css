@@ -53,6 +53,13 @@ header a {
 header a:hover {
 	color:#FFFFFF;
 }
+
+.anchor{
+	height: 0px;
+	/*maintained by jquery*/
+	visibility: hidden;
+}
+
 article {
 	max-width:800px;
 	margin: 15px auto;
@@ -62,7 +69,7 @@ article {
   	-webkit-box-shadow: 1px 1px 3px 2px #aaaaaa;
   	box-shadow:         1px 1px 3px 2px #aaaaaa;
 }
-article h1 {
+rticle h1 {
 	font-style: italic;
         font-size: 20px;
 }
