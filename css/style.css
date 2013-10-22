@@ -5,6 +5,7 @@ body {
 	padding: 15px;
 	background-color: #CCCC99;
 	border-radius: 10px;
+	font-style: italic;
 }
 header {
 	position:fixed;
