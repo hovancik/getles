@@ -61,6 +61,7 @@ header a:hover {
 }
 
 article {
+	background: #ffffff;
 	max-width:800px;
 	margin: 15px auto;
 	padding: 1px 10px;
@@ -69,7 +70,7 @@ article {
   	-webkit-box-shadow: 1px 1px 3px 2px #aaaaaa;
   	box-shadow:         1px 1px 3px 2px #aaaaaa;
 }
-rticle h1 {
+article h1 {
 	font-style: italic;
         font-size: 20px;
 }
