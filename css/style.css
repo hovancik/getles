@@ -89,6 +89,10 @@ article img {
 	height: auto;
 	display: block;
 }
+article a {
+	color: #333333;
+	text-shadow: 0.5px 0px 0.5px #AAAAAA;
+}
 footer {
 	text-align: center;
 	color: #686868;
