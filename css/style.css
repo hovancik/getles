@@ -83,12 +83,7 @@ article p {
 	color: #333333;
 	font-size: 12px;
 }
-article img {
-	max-width:100%;
-	margin: 0 auto;
-	height: auto;
-	display: block;
-}
+
 article a {
 	color: #333333;
 	text-shadow: 0.5px 0px 0.5px #AAAAAA;
