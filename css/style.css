@@ -55,12 +55,6 @@ header a:hover {
 	color:#FFFFFF;
 }
 
-.anchor{
-	height: 0px;
-	/*maintained by jquery*/
-	visibility: hidden;
-}
-
 article {
 	background: #ffffff;
 	max-width:800px;
