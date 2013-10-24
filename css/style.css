@@ -61,6 +61,7 @@ article {
 	margin: 15px auto;
 	padding: 1px 10px;
 	font-family: 'Roboto Slab', serif;
+	text-align: justify;
 	-moz-box-shadow: 1px 1px 3px 2px #aaaaaa;
   	-webkit-box-shadow: 1px 1px 3px 2px #aaaaaa;
   	box-shadow:         1px 1px 3px 2px #aaaaaa;
