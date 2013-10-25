@@ -7,6 +7,10 @@ body {
 	border-radius: 10px;
 	font-style: italic;
 }
+.code {
+  font-family: 'Share Tech Mono', sans-serif;
+  margin:auto 20px;
+}
 header {
 	position:fixed;
 	top: 0;

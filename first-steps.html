@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>getLES.tk - First steps</title>
 	<link rel="stylesheet" href="css/style.css">
-	<link href='http://fonts.googleapis.com/css?family=Iceberg|Roboto+Slab' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Iceberg|Roboto+Slab|Share+Tech+Mono' rel='stylesheet' type='text/css'>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="script.js"></script>
 </head>
@@ -48,7 +48,18 @@
                         <p class="code">nano /etc/ssh/sshd_config</p>
                         <p>Nano is text editor, following is address of sshd_config file. Internet is your friend if you do not understand. Anyway, what you need to do here is change number next to Port to port number you chose before. With "Ctrl-x" and the "y" you will save changes. You can use any text editor you want, right? But you will need to install it first. </p>
                         <p class="code">service ssh restart</p>
-                        <p>Type that to make changes come to effect.</p> 
+                        <p>Type that to make changes come to effect.</p>
+                        <p class="warning">SolusVM console is not meant for everyday use! From now on, use it only as emergency console.</p>
+                        <p> Wondering how to? We will find out in next section.</p>
+                        <h2>Connecting with SSH client</h2>
+                        <p>First thing you need is IPv4 address you wrote down while ago (when connecting via SolusVM). We gonna change the last octet of that address depending on where is you VPS located: for UK node change it to 108, for NL to 24 and IT is 139. Now you can connect via PuTTY or other SSH client of your choice. You know your IP address, your port, root as username and password you chose when signing up.</p>
+                        <p class="code">ssh root@XXX.XXX.XXX.XXX -p YYY</p>
+                        <p> That's how you can login via command line in Linux. XXX is your address and YYY is your port. I guess you are trying right now. </p>
+                        <p class="warning">Locations and IP addresses might change over time, so refer to LES website/forum for the newest info.</p>
+                        <p>Now you are all set-up to login to your server with your root server. But not for long...
+                        <h2>Other parts of email</h2>
+                        <p>There are more parts of email. Go ahead and read them carefully. </p>
+                        <p>What I wanna mention here is part called "REVERSE Proxy Info". If you want to, you can use it, but for sake of not making pointless tickets we will use different method - free as well, a bit faster, and LES owner will have less headache. Win-win. But that's for later.</p> 
 		</article>				
 	</section>
 	<footer>
