@@ -103,6 +103,9 @@ footer a {
    	-o-transition:color .3s ease-in;  
    	transition:color .3s ease-in; 
 }
+footer p {
+  margin: 0;
+}
 
 footer a:hover {
 	color:#383838;
