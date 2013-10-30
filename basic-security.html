@@ -47,7 +47,14 @@
                         <p>We talked about how to set-up sudo, but nothing about how to use it. Let's show one example.</p>
                         <p class="code">sudo apt-get update </p>
                         <p class="warning"> Not all command line programs and commands are require to run with sudo.</p>
-                        <p> Exactly, usually it's only commands that got to do something with system administration and config. Be careful about running commands as root via sudo. </p>  
+                        <p> Exactly, usually it's only commands that got to do something with system administration and config. Be careful about running commands as root via sudo. </p> 
+                        <h2>/etc/ssh/sshd_conf</h2>
+                        <p> Open the file with your favourite editor, we will make some changes. </p>
+                        <p class="code">PermitRootLogin no</p>
+                        <p>Just a seconds ago we checked that we can login with our new user and we can become root via sudo, so we are good to get rid of root login. Reasonable step. And don't forget to restart SSH service like we did when changing port.</p>
+                        <p>
+                        <h2>Doing more</h2> 
+                          <p>I wonder, do you feel comfortable with your VPS already? There is one more step that you could do: not using passwords but keys to login. There is a lot of resources online about it. <a href="http://muckingabout.eu/2013/03/03/secure-shell-access-to-the-vps/" target="_blank">Here</a> is one I found useful, as it covers Linux and Windows OS too. 
 
 
 
