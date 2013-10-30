@@ -32,8 +32,8 @@
                         <p class="code"> apt-get update && apt-get upgrade</p>
                         <p>What we did here is fetching of infos about available packages versions and then upgrade of all installed packages (we connected those 2 steps with &&). Do that often. </p>
                         <h2>Root ain't good</h2>
-                        <p>Using root in any way is not good. You should avoid it. </p>
-                        <p>How? First we will create new user, that can be used instead of root account.</p>
+                        <p>Using your root account is not recommended. You should avoid it. </p>
+                        <p>How? We will create new user to be used instead of root account.</p>
                         <p class="code">adduser yourname</p>
                         <p>You will be asked to create password and some another questions. Next we need to install <a href="https://wiki.debian.org/sudo" target="_blank">sudo</a>, so we can use our new account instead of root. Sudo is not yet installed, so let's do that first.</p>
                         <p class="code"> apt-get update && apt-get install sudo</p>
@@ -43,6 +43,11 @@
                         <p>Log out from console (little homework, research it if you have not done it, yet) and you should be able to login with your new user. The same way you did with your root account. You might notice the change in your command line. Remember how it looked before? What has changed? </p>
                         <p class="code">yourname@yourserver:~$</p>
                         <p>There is a lot to learn about <a href="http://cli.learncodethehardway.org/book/" target="_blank">command line</a>, but I will let you do it by yourself. Also there is a big chance you are already familiar with that stuff. </p>
+                        <h2>Sudo usage</h2>
+                        <p>We talked about how to set-up sudo, but nothing about how to use it. Let's show one example.</p>
+                        <p class="code">sudo apt-get update </p>
+                        <p class="warning"> Not all command line programs and commands are require to run with sudo.</p>
+                        <p> Exactly, usually it's only commands that got to do something with system administration and config. Be careful about running commands as root via sudo. </p>  
 
 
 
