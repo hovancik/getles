@@ -52,20 +52,33 @@
                         <p class="code">0.7.67-3+squeeze3 0</p>
                         <p class="code">500 http://ftp.nl.debian.org/debian/ squeeze/main i386 Packages</p>
                         <p class="code">500 http://security.debian.org/ squeeze/updates/main i386 Packages</p>
-                        <p>As you can see, installed version from official nginx is 1.4.3. Debian repo has version 0.7.67. Another reason for using official repo is support - it will be easier to get it if you use developer's version of software. Thought it's not that simple.  </p>
+                        <p>As you can see, installed version from official nginx is 1.4.3. Debian repo has version 0.7.67. Another reason for using official repo is support - it will be easier to get it in case you run into troubles. Debian version is probably a bit different from official one, thought it's not that simple.  </p>
                         <h2>Configuring nginx</h2>
                         <p>Let's configure nginx so we can use it to serve people our simple website. We will use following file, so go ahead and open it with your favourite editor.</p>
                         <p class="code">/etc/nginx/conf.d/default.conf</p>
                         <p>First thing we need to do is change Listen part. There is number 80, but it should looks like this:
                         <p class="code"> listen [one-of-your-ipV6-addresses]:80 default ipv6only=on;</p>
-                        <p>What we did here is make server listen on your IPv6 address and port 80. And it will use only IPv6.</p>
-                        <p>Around line 9 you can see line with "root /usr/share/nginx/html". That's the folder where we will put our html files. You can keep it, or you can change it. I myslef changed it to "/var/www". Folder does not exist yet, so let's create it. We will also change our user and folder so that we can put and edit files there without need to use sudo all the time.</p>
+                        <p>What we did here made server  work with one of your IPv6 address and with port 80. And it will use only IPv6. Unfortunately the most people still use IPv4, but we will deal with it later.</p>
+                        <p>Around line 9 you should see "root /usr/share/nginx/html". That's the folder where we will put our html files. You can keep it, or you can change it. I myself changed it to "/var/www". Folder does not exist yet, so let's create it. We will also change our user and folder so that we can put and edit files there without need to use sudo all the time.</p>
                         <p class="code">sudo mkdir /var/www</p>
                         <p class="code">sudo adduser username www-data</p>
                         <p class="code">sudo chown -R www-data:www-data /var/www</p>
                         <p class="code">sudo chmod -R g+rw /var/www</p>
                         <p>And to make changes we made in config file to take effect, let's restart nginx.</p>
                         <p class="code"> sudo /etc/init.d/nginx restart</p>
+                        <h2>Testing nginx</h2>
+                        <p>Your server should be reachable now. If you use IPv6, you can type your address in browser, if not use <a href="http://www.ipv6proxy.net/" target="_blank">IPv6 proxy</a>. Here is example for you.</p>
+                        <p class="code">http://[2001:420:80:1::5]</p>
+                        <p>As you probably have not put any files on your server yet, you might see and 404 error. Following is 404 from IPv6 proxy website.  
+                        <p class="code">The requested resource could not be loaded because the server returned an error:
+                        403 Forbidden (?).</p>
+                        <h2>Copy files to server</h2>
+                        <p>We can do it easy with SCP (or <a href="http://winscp.net/eng/index.php" target="_blank">WinSCP</a> for Windows). Syntax is similar as with SSH.</p> 
+                        <p class="code">scp -P YYYYY page.html username@XXX.XXX.XXX.XXX:/var/www</p>
+                        <h2>IPv4 connectivity</h2>
+                        <p>Opposite of IPv6, we ain't got any IPv4 addresses. There are more ways how to be reachable with IPv4 (search forums) and it's up to you what suits you better. I will not make any recommendations, I will only say which <a href="http://forum.lowendspirit.com/viewtopic.php?id=441" target="_blank">solution</a> I use. 
+
+
 
                       
                       </article>
