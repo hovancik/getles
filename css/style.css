@@ -110,3 +110,6 @@ footer p {
 footer a:hover {
 	color:#383838;
 }
+footer #flattr{
+  display:none;
+}
