@@ -59,7 +59,7 @@ header a:hover {
 	color:#FFFFFF;
 }
 
-article {
+section{
 	background: #ffffff;
 	max-width:800px;
 	margin: 15px auto;
@@ -69,6 +69,11 @@ article {
 	-moz-box-shadow: 1px 1px 3px 2px #aaaaaa;
   	-webkit-box-shadow: 1px 1px 3px 2px #aaaaaa;
   	box-shadow:         1px 1px 3px 2px #aaaaaa;
+}
+
+article {
+	margin-left: 20px;
+	margin-right: 20px;
 }
 article h1 {
 	font-style: italic;
@@ -82,6 +87,8 @@ article h2 {
 article p {
 	color: #333333;
 	font-size: 12px;
+        margin: 0.5em auto;
+        line-height:1.5;
 }
 
 article a {
@@ -109,4 +116,7 @@ footer p {
 
 footer a:hover {
 	color:#383838;
+}
+footer #flattr{
+  display:none;
 }
