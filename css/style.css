@@ -87,6 +87,8 @@ article h2 {
 article p {
 	color: #333333;
 	font-size: 12px;
+        margin: 0.5em auto;
+        line-height:1.5;
 }
 
 article a {
