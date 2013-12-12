@@ -91,6 +91,11 @@ article p {
         line-height:1.5;
 }
 
+.image {
+  text-align: center; 
+  vertical-align: middle;
+}
+
 article a {
 	color: #333333;
 	text-shadow: 0.5px 0 0.5px #AAAAAA;
