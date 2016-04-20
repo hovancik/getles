@@ -7,5 +7,3 @@ $( document ).ready(function() {
           $("#flattr").focus();
         });
 });
-
-

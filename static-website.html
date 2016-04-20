@@ -21,7 +21,7 @@
 </head>
 <body>
 	<header>
-		
+
 		<nav>
 			<h1>getLES<span>.tk<span></h1>
 			<ul>
@@ -33,7 +33,7 @@
 			</ul>
 		</nav>
 	</header>
-	<section>	
+	<section>
 		<article>
 			<h1>Static website</h1>
                         <h2>Nginx</h2>
@@ -48,7 +48,7 @@
                         <p>This way you told your Debian to use this repo. But to be sure we have what we wanna have, you need to add key for this repo. Type following.</p>
                         <p class="code">wget http://nginx.org/keys/nginx_signing.key</p>
                         <p class="code">cat nginx_signing.key | sudo apt-key add -</p>
-                        <p>Now we can install nginx like we did before when installing sudo. You should remember that.</p> 
+                        <p>Now we can install nginx like we did before when installing sudo. You should remember that.</p>
                         <p class="warning">Don't forget to run apt-get update, otherwise you wont be able to install nginx</p>
                         <p>Please make sure, that you installed version from official nginx repo. You can do it by typing following.</p>
                         <p class="code"> sudo apt-cache policy nginx</p>
@@ -80,18 +80,18 @@
                         <h2>Testing nginx</h2>
                         <p>Your server should be reachable now. If you use IPv6, you can type your address in browser, if not use <a href="http://www.ipv6proxy.net/" target="_blank">IPv6 proxy</a>. Here is example for you.</p>
                         <p class="code">http://[2001:420:80:1::5]</p>
-                        <p>As you probably have not put any files on your server yet, you might see and 404 error. Following is 404 from IPv6 proxy website.  
+                        <p>As you probably have not put any files on your server yet, you might see and 404 error. Following is 404 from IPv6 proxy website.
                         <p class="code">The requested resource could not be loaded because the server returned an error:
                         403 Forbidden (?).</p>
                         <h2>Copy files to server</h2>
-                        <p>We can do it easy with SCP (or <a href="http://winscp.net/eng/index.php" target="_blank">WinSCP</a> for Windows). Syntax is similar as with SSH.</p> 
+                        <p>We can do it easy with SCP (or <a href="http://winscp.net/eng/index.php" target="_blank">WinSCP</a> for Windows). Syntax is similar as with SSH.</p>
                         <p class="code">scp -P YYYYY page.html username@XXX.XXX.XXX.XXX:/var/www</p>
                         <h2>IPv4 connectivity</h2>
-                        <p>Opposite of IPv6, we ain't got any IPv4 addresses. There are more ways how to be reachable with IPv4 (search forums) and it's up to you what suits you better. I will not make any recommendations, I will only say which <a href="http://forum.lowendspirit.com/viewtopic.php?id=441" target="_blank">solution</a> I use. 
+                        <p>Opposite of IPv6, we ain't got any IPv4 addresses. There are more ways how to be reachable with IPv4 (search forums) and it's up to you what suits you better. I will not make any recommendations, I will only say which <a href="http://forum.lowendspirit.com/viewtopic.php?id=441" target="_blank">solution</a> I use.
 
 
 
-                      
+
                       </article>
 	</section>
 	<footer>
@@ -108,12 +108,12 @@
     'share' : {
       'position' : 'left',
       'numPreferredServices' : 5
-    }, 
+    },
     'follow' : {
       'services' : [
         {'service': 'facebook', 'id': 'pages/Lowendspirit/303372049803441'}
       ]
-    }   
+    }
   });
 </script>
 <!-- AddThis Smart Layers END -->
