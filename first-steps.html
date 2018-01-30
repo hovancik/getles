@@ -1,27 +1,33 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>getLES.tk - First steps</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="flattr:id" content="en32oj">
+	<title>getLES.tk | First steps</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Iceberg|Roboto+Slab|Share+Tech+Mono' rel='stylesheet' type='text/css'>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="script.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-45382064-1', 'getles.tk');
-  ga('send', 'pageview');
-
-</script>
+	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-45382064-1', 'getles.tk');
+		ga('send', 'pageview');
+	</script>
 </head>
+
 <body>
 	<header>
-
 		<nav>
 			<h1>getLES<span>.tk<span></h1>
 			<ul>
@@ -38,64 +44,67 @@
 			<h1>First steps</h1>
 			<p>Did you receive email "Your New VPS Details (READ IN FULL)"? </p>
 			<h2>Congratulations!</h2>
-			<p>Finally, you will be reading comments like "read carefully" from someone else, not me. And indeed, that's what you sho..wait, not should, have to do! Email is pretty long, but very useful. If you did some research in previous parts, you should already be familiar with stuff in email, but let's check it out together. </p>
-                        <p class="warning">For your own good always refer to the original email and website content. Anything mentioned here might become obsolete anytime.</p>
-                        <h2>VPS SolusVM Control Panel</h2>
-                        <p>Let's skip first email parts and find the one called VPS SolusVM Control Panel. You can find your login info and address of it. Please find it, login, and come back. We will use it soon.</p>
-                        <h2>Server Details</h2>
-                        <p>You should be able to see your IPv4 and IPv6 addresses. As you might know, this service comes with no dedicated IPv4, so the address we can see is from internal network. Noone from outside of our network can connect to that address. That's not the case of IPV6- the addresses you see are your public IPv6 addresses that you can use. So what does this means? We will need to find some way hot to let IPv4 users (still the most of internet users nowadays) connect to your server , if that's how you plan to use your new VPS. But we will deal with it later. </p>
-
-                        <p>You can also see reminder of your server name and the fact, that the password is whatever you chose when signing up.</p>
-                        <h2>IPv4 NAT IP Information</h2>
-                        <p> What you do next is counting of your port number. For the first time I didn't get what to do, but it's really simple.</p>
-                        <p>Let's say our main IP address is 192.168.0.17. The ports are based on the last octet of your IP. So in our case, the last octet is 17. Our example address 192.168.0.17 has the following port range forwarded: 1701 - 1720. Choose one from that range and remember it. You will need it pretty soon. Like now.</p>
-                        <p class="warning"> Better be sure! Check with original email, whether the port assignment system is still the same.</p>
-                        <h2> SSH Access Information</h2>
-                        <p> Let's connect to our server, right? It's been some time since we are going around it.</p>
-                        <p class="warning">Next steps are done on Debian install. Check specifics of your OS if you use different one.</p>
-                        <p>First thing you need to do is find and install some SSH client. There are many, eg. LES recommends PuTTY - pretty solid choice, you might go with that one without any headache. So go ahead and install SSH client of your choice. </p>
-                        <p>Funnily enough, we are not going to use SSH client right away- our first connection to server will be via SolusVM console. You probably read that in email: "Please be sure to update your sshd_config file with an assigned port via the solusvm console and restart the ssh service if you intent to use IPv4". I guess you do intent to. Now it's time to go to your VPS SolusVM Control Panel that you logged at the beginning. You should see button with "Serial console" text on it. Go ahead and click. You might see some warning, and Create Session button. Click it. And some Java warnings. Agree with everything. At the end you should see Password Authentication window. Username and password are visible on website, along with IP address (not your main IPv4). Write that address somewhere, we will need it.</p>
-                        <p>Congratz, you've just logged to your server for the first time (with your root account)!</p>
-                        <p> But let's not forget why we came here: to edit our sshd_config file. Editing that file is first step in securing your server. </p>
-                        <p class="code">nano /etc/ssh/sshd_config</p>
-                        <p>Nano is text editor, following is address of sshd_config file. Internet is your friend if you do not understand. Anyway, what you need to do here is change number next to Port to port number you chose before. With "Ctrl-x" and the "y" you will save changes. You can use any text editor you want, right? But you will need to install it first. </p>
-                        <p class="code">service ssh restart</p>
-                        <p>Type that to make changes come to effect.</p>
-                        <p class="warning">SolusVM console is not meant for everyday use! From now on, use it only as emergency console.</p>
-                        <p> Wondering how to? We will find out in next section.</p>
-                        <h2>Connecting with SSH client</h2>
-                        <p>First thing you need is IPv4 address you wrote down while ago (when connecting via SolusVM). We gonna change the last octet of that address depending on where is you VPS located: for UK node change it to 108, for NL to 24 and IT is 139. Now you can connect via PuTTY or other SSH client of your choice. You know your IP address, your port, root as username and password you chose when signing up.</p>
-                        <p class="code">ssh root@XXX.XXX.XXX.XXX -p YYY</p>
-                        <p> That's how you can login via command line in Linux. XXX is your address and YYY is your port. I guess you are trying right now. </p>
-                        <p class="warning">Locations and IP addresses might change over time, so refer to LES website/forum for the newest info.</p>
-                        <p>Now you are all set-up to login to your server with your root server. But not for long...
-                        <h2>Other parts of email</h2>
-                        <p>There are more parts of email. Go ahead and read them carefully. </p>
-                        <p>What I wanna mention here is part called "REVERSE Proxy Info". If you want to, you can use it, but for sake of not making pointless tickets we will use different method - free as well, a bit faster, and LES owner will have less headache. Win-win. But that's for later.</p>
+			<p>Finally, you will be reading comments like "read carefully" from someone else, not me. And indeed, that's what you sho..wait, not should, have to do! Email is pretty long, but very useful. If you did some research in previous parts, you should already
+				be familiar with stuff in email, but let's check it out together. </p>
+			<p class="warning">For your own good always refer to the original email and website content. Anything mentioned here might become obsolete anytime.</p>
+			<h2>VPS SolusVM Control Panel</h2>
+			<p>Let's skip first email parts and find the one called VPS SolusVM Control Panel. You can find your login info and address of it. Please find it, login, and come back. If that worked, we're ready to go!</p>
+			<h2>Server Details</h2>
+			<p>In email, you should be able to see your IPv4 address. As you might know, this service comes with no dedicated IPv4, so the address we can see is from internal network. Noone from outside of our network (the network of the server) can connect to that
+				address. That's not the case of IPV6- the addresses you see (in your SolusVM) are your public IPv6 addresses that you can use. </p>
+			<p>So what does this means? We will need to find some way hot to let IPv4 users (still the most of internet users nowadays) connect to your server , if that's how you plan to use your new VPS. But we will deal with it later. </p>
+			<p>You can also see reminder of your server name and the fact, that the password is whatever you chose when signing up.</p>
+			<h2>IPv4 NAT IP Information</h2>
+			<p> What you do next is counting of your port numbers. For the first time I didn't get what to do, but it's really simple.</p>
+			<p>You have been assigned a range of 20 ports along with your NAT IPv4 address and 1 redirection port for ssh.</p>
+			<p>Let's say our main IP address is 192.168.0.17. The ports are based on the last octet of your IP. So in our case, the last octet is 17. Our example address 192.168.0.17 has the following port range forwarded: 1701 - 1720. You can use these for anything
+				you want.</p>
+			<p>Next step is to find the external NAT IP's for inbound IPv4 traffic. I find the email pretty self-explanatory. Write your IP down. For the exammple sake, let's say it's 192.168.22.22.</p>
+			<p>You also get 1 extra pre-forwarded port if you intent to use IPv4 (and we do), that will redirect to port 22 (ssh). This is the last port allocated, in our case it's 1721. </p>
+			<p class="warning"> Better be sure! Check with original email, whether the port assignment system is still the same.</p>
+			<h2> SSH Access Information</h2>
+			<p> Let's connect to our server, right? It's been some time since we are going around it.</p>
+			<p>First thing you need to do is find and install some SSH client. There are many, so go ahead and install SSH client of your choice.</p>
+			<p class="code">ssh root@XXX.XXX.XXX.XXX -p YYY</p>
+			<p> That's how you can login via command line in Linux. XXX is your address and YYY is your port.</p>
+			<p>We will use the information we found a minute ago: our example server will be 192.168.22.22, port is 1721. When asked for password, use the one you set up during checkout. You could also access your server using a free simple SSH client program called
+				Putty.</p>
+			<p>Congratz, you've just logged to your server for the first time (with your root account)!</p>
+			<p>Now you are all set-up to login to your server with your root server. But not for long...</p>
+			<h2 id="reverse">REVERSE Proxy Info</h2>
+			<p>Reverse proxy is an easy way how to make your machine accesible over IPv4 via your already owned domain name, let's sake example.com.</p>
+			<p>The process has been automated and more info can be found <a href="http://forum.lowendspirit.com/viewtopic.php?id=1152" target="_blank">here.</a></p>
+			<p>The only information that is not there is what you need to do with your part of DNS. As it might not be obvious, let's say it here: you need to create an A record poiting to the IP address we found earlier (and that we used to SSH to server).</p>
+			<p>You can connect to your VPS like this, now:</p>
+			<p class="code">ssh root@example.com -p YYY</p>
+			<h2>Other parts of email</h2>
+			<p>There are more parts of email. Go ahead and read them carefully. </p>
+			<p class="next">up next: <a href="basic-security.html">basic security</a></p>
 		</article>
 	</section>
 	<footer>
 		<p>2013+ <a href="http://hovancik.net" target="_blank">Jan Hovancik</a></p>
-                <p> <a href="https://github.com/hovancik/getles/issues" target="_blank">feedback</a> | &hearts; | <a href="https://github.com/hovancik/getles/fork" target="_blank">fork on github</a>  </p>
-                    <p><a href="https://flattr.com/submit/auto?user_id=conta&url=http%3A%2F%2Fgetles.tk" target="_blank" id="flattr"><img src="https://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a></p>
+		<p><a href="https://github.com/hovancik/getles/issues" target="_blank">feedback</a> | <a href="https://www.patreon.com/hovancik">&hearts;</a> | <a href="https://github.com/hovancik/getles/fork" target="_blank">fork on github</a> </p>
 	</footer>
-<!-- AddThis Smart Layers BEGIN -->
-<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5275aeb82e1b5659"></script>
-<script type="text/javascript">
-  addthis.layers({
-    'theme' : 'transparent',
-    'share' : {
-      'position' : 'left',
-      'numPreferredServices' : 5
-    },
-    'follow' : {
-      'services' : [
-        {'service': 'facebook', 'id': 'pages/Lowendspirit/303372049803441'}
-      ]
-    }
-  });
-</script>
-<!-- AddThis Smart Layers END -->
+	<!-- AddThis Smart Layers BEGIN -->
+	<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5275aeb82e1b5659"></script>
+	<script type="text/javascript">
+		addthis.layers({
+			'theme': 'transparent',
+			'share': {
+				'position': 'left',
+				'numPreferredServices': 5
+			},
+			'follow': {
+				'services': [{
+					'service': 'facebook',
+					'id': 'pages/Lowendspirit/303372049803441'
+				}]
+			}
+		});
+	</script>
+	<!-- AddThis Smart Layers END -->
 </body>
+
 </html>
