@@ -1,28 +1,33 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>getLES.tk - Basic Security</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="flattr:id" content="en32oj">
+	<title>getLES.tk | Basic Security</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Iceberg|Roboto+Slab|Share+Tech+Mono' rel='stylesheet' type='text/css'>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="script.js"></script>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-45382064-1', 'getles.tk');
-  ga('send', 'pageview');
-
-</script>
+	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-45382064-1', 'getles.tk');
+		ga('send', 'pageview');
+	</script>
 </head>
+
 <body>
 	<header>
-
 		<nav>
 			<h1>getLES<span>.tk<span></h1>
 			<ul>
@@ -38,66 +43,71 @@
 		<article>
 			<h1>Basic security</h1>
 			<h2>Something we've already done</h2>
-			<p>Guess what? You already did some steps - we changed a port number. But that's far away from being secure. Well, one can never be secure enough. And honestly, steps explained here wont be enough to make your install bullet-proof. But they will be enough to get you started. I hope that you can get some confidence and do more security-related stuff by your own after. </p>
-                        <p class="warning"> Default usually means "easy to guess". Keep that in mind.</p>
-                        <h2>System upgrade</h2>
-                        <p> I guess reasoning behind this is pretty simple: outdated software is always risky. To update (or rather upgrade) your Debian login to your VPS and type the code. </p>
-                        <p class="code"> apt-get update && apt-get upgrade</p>
-                        <p>What we did here is fetching of infos about available packages versions and then upgrade of all installed packages (we connected those 2 steps with &&). Do that often. </p>
-                        <h2>Root ain't good</h2>
-                        <p>Using your root account is not recommended. You should avoid it. </p>
-                        <p>How? We will create new user to be used instead of root account.</p>
-                        <p class="code">adduser yourname</p>
-                        <p>You will be asked to create password and some another questions. Next we need to install <a href="https://wiki.debian.org/sudo" target="_blank">sudo</a>, so we can use our new account instead of root. Sudo is not yet installed, so let's do that first.</p>
-                        <p class="code"> apt-get update && apt-get install sudo</p>
-                        <p class="warning">It's always good idea to keep repositories updated with apt-get update before installing anything.</p>
-                        <p> Sudo allows some users to execute some commands as root. But first it need to be configured by someone who is system administrator, in our case root. You are logged in as root, so type following to add your new user to sudoers. <p>
-                        <p class="code">adduser yourname sudo</p>
-                        <p>Log out from console (little homework, research it if you have not done it, yet) and you should be able to login with your new user. The same way you did with your root account. You might notice the change in your command line. Remember how it looked before? What has changed? </p>
-                        <p class="code">yourname@yourserver:~$</p>
-                        <p>There is a lot to learn about <a href="http://cli.learncodethehardway.org/book/" target="_blank">command line</a>, but I will let you do it by yourself. Also there is a big chance you are already familiar with that stuff. </p>
-                        <h2>Sudo usage</h2>
-                        <p>We talked about how to set-up sudo, but nothing about how to use it. Let's show one example. First, log in as you would with root account, but use your new username and password instead. Then type following to test whether all works fine. If you followed previous steps, it should. </p>
-                        <p class="code">sudo apt-get update </p>
-                        <p class="warning"> Not all command line programs and commands are require to run with sudo.</p>
-                        <p> Exactly, usually it's only commands that got to do something with system administration and config. Be careful about running commands as root via sudo. Try runnig repositories update without sudo. </p>
-                        <h2>/etc/ssh/sshd_config</h2>
-                        <p> Open the file with your favourite editor, we will make some changes. </p>
-                        <p class="code">PermitRootLogin no</p>
-                        <p>Just a seconds ago we checked that we can login with our new user and we can become root via sudo, so we are good to get rid of root login. Reasonable step. And don't forget to restart SSH service like we did when changing port.</p>
-                        <p>
-                        <h2>Doing more</h2>
-                        <p>I wonder, do you feel comfortable with your VPS already? There is one more step that you could do: not using passwords but keys to login. There is a lot of resources online about it. <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2" target="_blank">Here</a> is one I found useful.</p>
-                        <p> But that's for sure not the only thing you could do more. You can install firewall, set IP that can log in, and much more. As always, internet is your friend.</p>
-
-
-
+			<p>Guess what? You already did some steps - we changed a port number. (It was rather changed for us, in a way, but...)</p>
+			<p> But that's far away from being secure. Well, one can never be secure enough. And honestly, steps explained here wont be enough to make your install bullet-proof. But they will be enough to get you started. I hope that you can get some confidence and
+				do more security-related stuff on your own later. </p>
+			<p class="warning"> Default usually means "easy to guess". Keep that in mind.</p>
+			<h2>System upgrade</h2>
+			<p> I guess reasoning behind this is pretty simple: outdated software is always risky. To update (or rather upgrade) your Debian login to your VPS and type the code. </p>
+			<p class="code"> apt-get update && apt-get upgrade</p>
+			<p>What we did here is fetching of infos about available packages versions and then upgrade of all installed packages (we connected those 2 steps with &&). Do that often. </p>
+			<h2>Root ain't good</h2>
+			<p>Using your root account is not recommended. You should avoid it. </p>
+			<p>How? We will create new user to be used instead of root account.</p>
+			<p class="code">adduser yourname</p>
+			<p>You will be asked to create password and some another questions. Next we need to install <a href="https://wiki.debian.org/sudo" target="_blank">sudo</a>, so we can use our new account instead of root. Sudo might not yet be installed, so let's do that
+				first.
+			</p>
+			<p class="code"> apt-get update && apt-get install sudo</p>
+			<p class="warning">It's always good idea to keep repositories updated with apt-get update before installing anything.</p>
+			<p> Sudo allows some users to execute some commands as root. But first it need to be configured by someone who is system administrator, in our case root. You are logged in as root, so type following to add your new user to sudoers.</p>
+			<p class="code">adduser yourname sudo</p>
+			<p>Log out from console (little homework, research it if you have not done it, yet) and you should be able to login with your new user. The same way you did with your root account. You might notice the change in your command line. Remember how it looked
+				before? What has changed? </p>
+			<p class="code">yourname@yourserver:~$</p>
+			<p>There is a lot to learn about <a href="http://www.linuxcommand.org/" target="_blank">command line</a>, but I will let you do it by yourself. Also there is a big chance you are already familiar with that stuff. </p>
+			<h2>Sudo usage</h2>
+			<p>We talked about how to set-up sudo, but nothing about how to use it. Let's show one example. First, log in as you would with root account, but use your new username and password instead. Then type following to test whether all works fine. If you followed
+				previous steps, it should. </p>
+			<p class="code">sudo apt-get update </p>
+			<p class="warning"> Not all command line programs and commands are require to run with sudo.</p>
+			<p> Exactly, usually it's only commands that got to do something with system administration and config. Be careful about running commands as root via sudo. Try runnig repositories update without sudo. </p>
+			<h2>/etc/ssh/sshd_config</h2>
+			<p> Open the file with your favourite editor, we will make some changes. </p>
+			<p class="code">PermitRootLogin no</p>
+			<p>Just a seconds ago we checked that we can login with our new user and we can become root via sudo, so we are good to get rid of root login. Reasonable step. And don't forget to restart SSH service. Might be done with <code>sudo service ssh restart</code></p>
+			<h2>Doing more</h2>
+			<p>I wonder, do you feel comfortable with your VPS already? There is one more step that you could do: not using passwords but keys to login. There is a lot of resources online about it. <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2"
+				  target="_blank">Here</a> is one I found useful.</p>
+			<p> But that's for sure not the only thing you could do more. You can install firewall, set IP that can log in, and much more. As always, internet is your friend.</p>
+			<p class="next">up next: <a href="static-website.html">static website</a></p>
 		</article>
 	</section>
 	<footer>
 		<p>2013+ <a href="http://hovancik.net" target="_blank">Jan Hovancik</a></p>
-                <p> <a href="https://github.com/hovancik/getles/issues" target="_blank">feedback</a> | &hearts; | <a href="https://github.com/hovancik/getles/fork" target="_blank">fork on github</a>  </p>
-                    <p><a href="https://flattr.com/submit/auto?user_id=conta&url=http%3A%2F%2Fgetles.tk" target="_blank" id="flattr"><img src="https://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a></p>
+		<p><a href="https://github.com/hovancik/getles/issues" target="_blank">feedback</a> | <a href="https://www.patreon.com/hovancik">&hearts;</a> | <a href="https://github.com/hovancik/getles/fork" target="_blank">fork on github</a> </p>
 	</footer>
-<!-- AddThis Smart Layers BEGIN -->
-<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
-<!-- AddThis Smart Layers BEGIN -->
-<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5275aeb82e1b5659"></script>
-<script type="text/javascript">
-  addthis.layers({
-    'theme' : 'transparent',
-    'share' : {
-      'position' : 'left',
-      'numPreferredServices' : 5
-    },
-    'follow' : {
-      'services' : [
-        {'service': 'facebook', 'id': 'pages/Lowendspirit/303372049803441'}
-      ]
-    }
-  });
-</script>
-<!-- AddThis Smart Layers END -->
+	<!-- AddThis Smart Layers BEGIN -->
+	<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+	<!-- AddThis Smart Layers BEGIN -->
+	<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5275aeb82e1b5659"></script>
+	<script type="text/javascript">
+		addthis.layers({
+			'theme': 'transparent',
+			'share': {
+				'position': 'left',
+				'numPreferredServices': 5
+			},
+			'follow': {
+				'services': [{
+					'service': 'facebook',
+					'id': 'pages/Lowendspirit/303372049803441'
+				}]
+			}
+		});
+	</script>
+	<!-- AddThis Smart Layers END -->
 </body>
+
 </html>
